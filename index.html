@@ -1,0 +1,283 @@
+ <!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำตัว - นางสาวพรชิตา ทูลไธสง</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto:wght@400;500&display=swap">
+    <style>
+        :root {
+            --bg: #f0fff5;                /* มิ้นต์ขาวอ่อนมาก */
+            --soft-mint: #e8fff0;         /* มิ้นต์นุ่ม ๆ */
+            --pastel-mint: #c8f0d4;       /* เขียวมิ้นต์พาสเทลหลัก */
+            --sweet-mint: #98e0b9;        /* มิ้นต์สดใสหวาน ๆ */
+            --lavender-mint: #d4f0e0;     /* มิ้นต์อมเขียวอ่อน */
+            --text: #4a6c5a;              /* เทาเขียวเข้ม อ่านง่าย */
+            --text-dark: #2e5d48;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: "Itim", "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--bg) 0%, #e8fff0 100%);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--pastel-mint) 0%, #e0ffe8 100%);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 90px 20px 70px;
+            box-shadow: 0 8px 25px rgba(152, 224, 185, 0.2);
+        }
+
+        header h1 {
+            font-family: "Itim", sans-serif;
+            font-size: 3.2em;
+            margin: 0;
+            color: #2e5d48;
+            display: inline-block;
+            animation: bouncy 2.5s infinite ease-in-out;
+        }
+
+        @keyframes bouncy {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        header h1, section h2 {
+            animation: glowPulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% { text-shadow: 0 0 8px #c8f0d4, 0 0 16px #98e0b9; transform: scale(1); }
+            100% { text-shadow: 0 0 20px #7dd9a8, 0 0 35px #98e0b9; transform: scale(1.02); }
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: floatUp 1.5s ease-out forwards;
+            background-color: var(--card-bg);
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(152, 224, 185, 0.18);
+            max-width: 900px;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover { transform: translateY(-8px); }
+
+        #about { animation-delay: 0.4s; }
+        #skills { animation-delay: 0.7s; }
+        #contact { animation-delay: 1s; }
+
+        @keyframes floatUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        section h2 {
+            font-family: "Itim", sans-serif;
+            font-size: 2.4em;
+            color: #2e5d48;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--sweet-mint);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--soft-mint);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(152, 224, 185, 0.15);
+            transition: all 0.35s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 12px 30px rgba(152, 224, 185, 0.25);
+            border-color: var(--sweet-mint);
+        }
+
+        .skill-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--pastel-mint);
+            transition: transform 0.4s ease;
+        }
+
+        .skill-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .skill-card p {
+            padding: 18px 15px;
+            margin: 0;
+            font-size: 1.25em;
+            color: #2e5d48;
+            font-weight: 500;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li {
+            background: var(--lavender-mint);
+            margin: 12px 0;
+            padding: 16px 20px;
+            border-radius: 16px;
+            border-left: 5px solid var(--pastel-mint);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+        ul li:hover {
+            background: #e0ffe8;
+            border-left-color: var(--sweet-mint);
+            transform: translateX(8px);
+        }
+
+        a { color: var(--sweet-mint); text-decoration: none; font-weight: 500; }
+        a:hover { color: #7dd9a8; text-decoration: underline wavy #c8f0d4 2px; }
+
+        nav#menu-bar {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+        nav#menu-bar ul {
+            display: inline-flex;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px 30px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(152, 224, 185, 0.15);
+        }
+        nav#menu-bar a {
+            font-size: 1.8em;
+            color: #5a8c76;
+            transition: all 0.3s ease;
+        }
+        nav#menu-bar a.active, nav#menu-bar a:hover {
+            color: var(--sweet-mint);
+            transform: scale(1.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(240, 255, 245, 0.7);
+            color: #5f8873;
+            font-size: 1em;
+            margin-top: 50px;
+            animation: bouncyHeart 3s infinite ease-in-out;
+        }
+
+        @keyframes bouncyHeart {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 70px 15px 50px; }
+            header h1 { font-size: 2.6em; }
+            section { padding: 25px; margin: 30px 15px; }
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(152, 224, 185, 0.4);
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto 30px;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="c:\Users\624-11\Downloads\2bcfb6c6-21ed-4976-b48d-6f0bd97caee7.jpg" 
+             alt="รูปประจำตัว" class="profile-pic">
+        <h1>ยินดีต้อนรับสู่หน้าแนะนำตัว ♡</h1>
+        <p>นางสาวพรชิตา ทูลไธสง</p>
+    </header>
+
+    <div class="container">
+
+        <section id="about">
+            <h2>เกี่ยวกับฉัน</h2>
+            <p>สวัสดีค่ะ ♡ ดิฉันนางสาวพรชิตา ทูลไธสง ชื่อเล่นนาเดียร์</p>
+            <p>ยินดีที่ได้รู้จักทุกคนเลยย~</p>
+        </section>
+
+        <section id="skills">
+            <h2>ทักษะความถนัด ♡</h2>
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <img src="c:\Users\624-11\Downloads\0ddada64-48d1-4427-8bed-ae825c28b4ec.jpg">
+                    <p>ร้องเพลง</p>
+                </div>
+
+                <div class="skill-card">
+                    <img src="พรชิตา แนะนำตัว/89f78f67-e8b5-4aef-8fab-d4be7ce709bd.jpg" alt="กล้าคิดกล้าทำ">
+                    <p>ชอบเล่นกีฬาฟุตบอล</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>ช่องทางการติดต่อ</h2>
+            <ul>
+                <li>LINE: <a href="https://line.me/ti/p/c_loNWl361" target="_blank">นา เดียร์ฯ</a></li>
+                <li>Facebook: <a href="https://www.facebook.com/share/19Z1C6WXgF/?mibextid=wwXIfr" target="_blank">นา เดียร์ฯ.</a></li>
+                <li>เบอร์โทร: 063-053-0785</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <nav id="menu-bar">
+        <ul>
+            <li><a href="index.html" class="menu-btn active">« หน้าหลัก</a></li>
+            <li><a href="ผลงาน.html" class="menu-btn ">ผลงาน »</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        ♡ ขอบคุณที่แวะมาชมนะคะ ♡
+    </footer>
+
+</body>
+</html>

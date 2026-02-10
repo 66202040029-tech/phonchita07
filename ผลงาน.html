@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงานและกิจกรรม ♡</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f0fff5;                /* มิ้นต์ขาวอ่อนมาก */
+            --soft-mint: #e8fff0;         /* มิ้นต์นุ่ม ๆ */
+            --pastel-mint: #c8f0d4;       /* เขียวมิ้นต์พาสเทลหลัก */
+            --sweet-mint: #98e0b9;        /* มิ้นต์สดใสหวาน ๆ */
+            --lavender-mint: #d4f0e0;     /* มิ้นต์อมเขียวอ่อน */
+            --text: #4a6c5a;              /* เทาเขียวเข้ม อ่านง่าย */
+            --text-dark: #2e5d48;
+            --card-bg: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: "Itim", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--soft-mint) 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(45deg, var(--pastel-mint) 0%, #e0ffe8 100%);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 80px 20px 60px;
+            box-shadow: 0 10px 30px rgba(152, 224, 185, 0.25);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: var(--text-dark);
+            text-shadow: 0 3px 10px rgba(152, 224, 185, 0.3);
+        }
+
+        .profile-container {
+            text-align: center;
+            margin: 0 auto 25px auto;
+            padding: 0;
+            width: 100%;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(152, 224, 185, 0.4);
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.08);
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: floatUp 1.2s ease-out forwards;
+            animation-delay: 0.3s;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px 30px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(152, 224, 185, 0.18);
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes floatUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header h1, section h2 {
+            animation: glowPulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% {
+                text-shadow: 0 0 10px var(--pastel-mint),
+                             0 0 20px var(--sweet-mint);
+                transform: scale(1);
+            }
+            100% {
+                text-shadow: 0 0 25px var(--sweet-mint),
+                             0 0 40px var(--mint-accent);
+                transform: scale(1.03);
+            }
+        }
+
+        section h2 {
+            color: var(--text-dark);
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--sweet-mint), var(--lavender-mint));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .link-item {
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--lavender-mint) 100%);
+            border-radius: 16px;
+            border: 2px solid var(--pastel-mint);
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(152, 224, 185, 0.15);
+        }
+
+        .link-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(152, 224, 185, 0.25);
+            border-color: var(--sweet-mint);
+        }
+
+        .link-item h3 {
+            margin: 0 0 8px 0;
+            color: var(--text-dark);
+        }
+
+        .link-item span {
+            display: block;
+            margin-bottom: 12px;
+            color: #4a7c6a;
+            font-size: 1.05em;
+        }
+
+        .portfolio-img {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto 10px;
+            border-radius: 16px;
+            border: 5px solid var(--pastel-mint);
+            box-shadow: 0 8px 20px rgba(152, 224, 185, 0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-img:hover {
+            transform: scale(1.05);
+        }
+
+        nav#menu-bar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.92);
+            padding: 12px 30px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(152, 224, 185, 0.25);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav#menu-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav#menu-bar a {
+            font-size: 2em;
+            color: #5a8c76;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        nav#menu-bar a:hover {
+            color: var(--sweet-mint);
+            transform: scale(1.2);
+        }
+
+        nav#menu-bar a.active {
+            color: var(--mint-accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px 60px;
+            color: #5f8873;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5em; }
+            section { margin: 30px 15px; padding: 25px 20px; }
+            nav#menu-bar { padding: 10px 20px; }
+            nav#menu-bar ul { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="menu-bar">
+        <ul>
+            <li><a href="index.html" class="menu-btn">« หน้าหลัก</a></li>
+            <li><a href="ผลงาน.html" class="menu-btn active">ผลงาน »</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="profile-container">
+            <img src="c:\Users\624-11\Downloads\2bcfb6c6-21ed-4976-b48d-6f0bd97caee7.jpg"
+                 alt="รูปประจำตัว นางสาวพรชิตา ทูลไธสง" 
+                 class="profile-pic">
+        </div>
+        <h1>ผลงานและกิจกรรม ♡</h1>
+    </header>
+
+    <!-- ผลงาน ภายใน -->
+    <section id="portfolio">
+        <h2>ผลงาน ภายใน ♡</h2>
+        <ul class="link-list">
+            <li class="link-item">
+                <h3>ดำเนินโครงการการแข่งขันกีฬาสีภายในต้านภัยยาเสพติด</h3>
+                <span>— พัฒนากิจการนักเรียน นักศึกษา ดำเนินโครงการการแข่งขันกีฬาสีภายในต้านภัยยาเสพติด "ดอกจานเกมส์"</span>
+                <img src="c:\Users\624-11\Downloads\300cd1b9-3c14-42a5-ad04-f157c1638f12.jpg"
+                     alt="โครงการดอกจานเกมส์" class="portfolio-img">
+            </li>
+            <li class="link-item">
+                <h3>ดำเนินโครงการการแข่งขันกีฬาสีภายในต้านภัยยาเสพติด</h3>
+                <span>— พัฒนากิจการนักเรียน นักศึกษา ดำเนินโครงการการแข่งขันกีฬาสีภายในต้านภัยยาเสพติด "ดอกจานเกมส์"</span>
+                <img src="c:\Users\624-11\Downloads\f9cf3dfe-76d3-4d24-9929-cd41c2d3d756.jpg"
+                     alt="โครงการดอกจานเกมส์" class="portfolio-img">
+            </li>
+        </ul>
+    </section>
+
+    <!-- ผลงานเกียรติบัตร -->
+    <section id="portfolio">
+        <h2>ผลงานเกียรติบัตร ♡</h2>
+        <ul class="link-list">
+            <li class="link-item">
+                <h3>CERTIFICATE OF COMPLETION - THAI MOOC</h3>
+                <span>— สู่การเป็นนักพัฒนาเว็บ: การสร้างหน้าเว็บเบื้องต้นด้วย HTML และ CSS (10 ชั่วโมง) โดย จุฬาลงกรณ์มหาวิทยาลัย</span>
+                <img src="c:\Users\624-11\Downloads\2de452fb85ce41febf1fa11bf671fc19xQ41GEsbygyPR3sA-0.jpg"
+                     alt="เกียรติบัตร Thai MOOC" class="portfolio-img">
+            </li>
+
+            <li class="link-item">
+                <h3>CERTIFICATE OF COMPLETION - THAI MOOC (English)</h3>
+                <span>— Creating a Basic Web Page with HTML and CSS (10 Hours) Awarded by Chulalongkorn University</span>
+                <img src="c:\Users\624-11\Downloads\2de452fb85ce41febf1fa11bf671fc19xQ41GEsbygyPR3sA-1.jpg"
+                     alt="Certificate Thai MOOC English" class="portfolio-img">
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        ♡ ขอบคุณที่แวะมาชมนะคะ ♡
+    </footer>
+
+</body>
+</html>
